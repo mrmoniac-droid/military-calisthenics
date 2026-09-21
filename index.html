@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MILITARY FIT 30">
+<title>MILITARY FIT 30</title>
+<style>
+:root{--bg:#0b0f14;--card:#151b23;--line:#27303b;--text:#f3f4f6;--muted:#9ca3af;--accent:#d4a72c;--ok:#4ade80}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+main{max-width:620px;margin:auto;padding:22px 16px 40px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+h1{font-size:24px;margin:0}.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.badge{border:1px solid var(--line);padding:8px 10px;border-radius:12px;font-size:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0}
+select,button{font:inherit}select{width:100%;background:#10151c;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:13px}
+.exercise{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+.exercise:last-child{border-bottom:0}.exercise input{width:22px;height:22px;accent-color:var(--accent)}
+.name{font-weight:700}.reps{color:var(--muted);font-size:13px;margin-top:3px}
+.done .name{text-decoration:line-through;opacity:.55}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{border:0;border-radius:12px;padding:13px;font-weight:700;min-height:46px}
+.primary{background:var(--accent);color:#111}.secondary{background:#202833;color:var(--text);border:1px solid var(--line)}
+.timer{text-align:center}.time{font-size:54px;font-weight:800;margin:5px 0 12px}
+.progress{height:10px;background:#222a34;border-radius:99px;overflow:hidden}.bar{height:100%;width:0;background:var(--accent);transition:.2s}
+.stat{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:8px}
+.small{font-size:12px;color:var(--muted);line-height:1.5}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div><h1>🪖 MILITARY FIT 30</h1><div class="sub">30 Hari • Bodyweight Training</div></div>
+<div class="badge" id="streak">🔥 0 hari</div>
+</header>
+
+<div class="card">
+<div class="stat"><span>Progress keseluruhan</span><strong id="pct">0%</strong></div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+</div>
+
+<div class="card">
+<label for="day"><b>Pilih Hari Latihan</b></label>
+<select id="day"></select>
+</div>
+
+<div class="card">
+<h2 id="title" style="margin:0 0 4px"></h2>
+<div id="note" class="small"></div>
+<div id="list"></div>
+</div>
+
+<div class="actions">
+<button class="primary" id="timerBtn">⏱️ Rehat 60s</button>
+<button class="secondary" id="resetBtn">Reset Hari</button>
+</div>
+
+<div class="card timer" id="timerCard" style="display:none">
+<div class="small">REST TIMER</div>
+<div class="time" id="time">60</div>
+<button class="secondary" id="stopBtn">Hentikan Timer</button>
+</div>
+
+<div class="card">
+<b>🏆 Tip</b>
+<div class="small" style="margin-top:6px">Utamakan teknik yang betul. Jika terlalu berat, kurangkan ulangan atau gunakan versi lebih mudah. Rehat jika sakit atau tidak sihat.</div>
+</div>
+</main>
+
+<script>
+const plans={};
+const recovery=[["Jalan / fast walk","20–30 min"],["Stretching","5–10 min"]];
+const base=[["Push-up","3 × 8"],["Squat","3 × 15"],["Plank","3 × 20s"],["Jumping Jack","3 × 30"]];
+for(let d=1;d<=30;d++){
+ let ex=base,note="Buat dengan teknik terkawal dan rehat secukupnya.";
+ if([4,7,11,14,18,21,25,28,30].includes(d)){ex=recovery;note="Hari pemulihan — kekalkan pergerakan ringan."}
+ else if(d===29){ex=[["Push-up","10 × 3–5 rounds"],["Squat","20 × 3–5 rounds"],["Lunges","10/kaki × 3–5 rounds"],["Burpee","5 × 3–5 rounds"],["Mountain Climber","20 × 3–5 rounds"],["Plank","30s × 3–5 rounds"]];note="Challenge akhir — ikut kemampuan."}
+ else if(d>=22){ex=[["Push-up","4 × 10"],["Squat","4 × 20"],["Lunges","3 × 10/kaki"],["Burpee","4 × 5"],["Mountain Climber","4 × 20"],["Plank","4 × 30s"]];note="Fasa intensiti — utamakan teknik."}
+ else if(d>=15){ex=[["Push-up","4 × 8"],["Squat","4 × 15"],["Lunges","3 × 10/kaki"],["Mountain Climber","4 × 20"],["Plank","3 × 30s"]];note="Fasa peningkatan kekuatan dan stamina."}
+ else if(d>=8){ex=[["Push-up","3 × 10"],["Squat","3 × 20"],["Lunges","3 × 8/kaki"],["Mountain Climber","3 × 20"],["Plank","3 × 25s"]];note="Tambah sedikit ulangan berbanding minggu pertama."}
+ plans[d]=ex.map(x=>x.slice());
+ plans[d].note=note;
+}
+let state=JSON.parse(localStorage.getItem("militaryFit30")||"{}");
+let current=Number(localStorage.getItem("militaryDay")||1);
+const day=document.getElementById("day"),list=document.getElementById("list"),title=document.getElementById("title"),note=document.getElementById("note");
+for(let d=1;d<=30;d++){let o=document.createElement("option");o.value=d;o.textContent="Day "+d;day.appendChild(o)}
+day.value=current;
+function save(){localStorage.setItem("militaryFit30",JSON.stringify(state));localStorage.setItem("militaryDay",current)}
+function render(){
+ day.value=current;title.textContent="Day "+current;note.textContent=plans[current].note;list.innerHTML="";
+ plans[current].forEach((e,i)=>{let row=document.createElement("label");row.className="exercise";let cb=document.createElement("input");cb.type="checkbox";let key=current+"-"+i;cb.checked=!!state[key];let box=document.createElement("div");box.innerHTML='<div class="name">'+e[0]+'</div><div class="reps">'+e[1]+'</div>';if(cb.checked)row.classList.add("done");cb.addEventListener("change",()=>{state[key]=cb.checked;if(cb.checked)row.classList.add("done");else row.classList.remove("done");save();update()});row.append(cb,box);list.appendChild(row)});
+ update();
+}
+function update(){
+ let total=0,done=0,daysDone=new Set();
+ for(let d=1;d<=30;d++)plans[d].forEach((_,i)=>{total++;if(state[d+"-"+i]){done++;daysDone.add(d)}});
+ let p=Math.round(done/total*100);document.getElementById("pct").textContent=p+"%";document.getElementById("bar").style.width=p+"%";
+ document.getElementById("streak").textContent="🔥 "+daysDone.size+" hari";
+}
+day.addEventListener("change",()=>{current=Number(day.value);save();render()});
+document.getElementById("resetBtn").addEventListener("click",()=>{plans[current].forEach((_,i)=>delete state[current+"-"+i]);save();render()});
+let timer=null;
+document.getElementById("timerBtn").addEventListener("click",()=>{let n=60;document.getElementById("timerCard").style.display="block";document.getElementById("time").textContent=n;clearInterval(timer);timer=setInterval(()=>{n--;document.getElementById("time").textContent=n;if(n<=0){clearInterval(timer);navigator.vibrate?.([150,80,150]);}},1000)});
+document.getElementById("stopBtn").addEventListener("click",()=>{clearInterval(timer);document.getElementById("timerCard").style.display="none"});
+render();
+</script>
+</body>
+</html>
