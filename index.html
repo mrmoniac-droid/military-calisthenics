@@ -3,187 +3,245 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080b10">
+<meta name="theme-color" content="#070b0d">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="MILITARY FIT 30">
 <title>MILITARY FIT 30</title>
 <style>
-:root{--bg:#080b10;--card:#121922;--card2:#192330;--line:#2b3948;--text:#f7f8fa;--muted:#9ba9b8;--gold:#d9ad35;--gold2:#f5d06a;--green:#4ddd85}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -5%,#29331b,#0b1016 34%,#080b10 76%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
-main{max-width:680px;margin:auto;padding:calc(15px + env(safe-area-inset-top)) 15px calc(40px + env(safe-area-inset-bottom))}
-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.brand{display:flex;align-items:center;gap:10px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#f3cd5f,#806014);display:grid;place-items:center;font-size:25px;box-shadow:0 8px 24px #0008}h1{margin:0;font-size:21px}.sub{font-size:12px;color:var(--muted);margin-top:3px}.streak{background:#17140d;border:1px solid #55431c;border-radius:14px;padding:7px 10px;text-align:center}.streak b{display:block}.streak span{font-size:9px;color:var(--muted)}
-.card{background:linear-gradient(180deg,var(--card),#10161e);border:1px solid var(--line);border-radius:19px;padding:15px;margin:11px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.tiny{font-size:10px;letter-spacing:.9px;color:var(--muted)}.notice{font-size:12px;line-height:1.55;color:var(--muted)}
-select,button{font:inherit}select{width:100%;padding:13px;border-radius:13px;border:1px solid var(--line);background:#0d131a;color:var(--text);font-size:16px}
-.progress{height:10px;border-radius:99px;background:#26313d;overflow:hidden;margin-top:9px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:.25s}
-.daygrid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:9px}.daybtn{height:43px;border-radius:11px;border:1px solid var(--line);background:#151d27;color:var(--text);font-weight:800}.daybtn.current{border-color:var(--gold);color:var(--gold2)}.daybtn.complete{background:#10261a;border-color:#2d7048;color:#70e59b}
-.daytitle{font-size:25px;margin:3px 0}.phase{font-size:9px;font-weight:900;letter-spacing:.8px;padding:7px 9px;border-radius:99px;border:1px solid #5a461b;color:var(--gold2);background:#1b170d}
-.exercise{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.exercise:last-child{border-bottom:0}.exercise input{width:22px;height:22px;accent-color:var(--gold);flex:none}.exercise-main{flex:1}.name{font-weight:850;font-size:16px}.reps{font-size:12px;color:var(--muted);margin-top:3px}.exercise.done{opacity:.5}.exercise.done .name{text-decoration:line-through}
-.demoMini{width:66px;height:66px;border-radius:15px;background:radial-gradient(circle,#263542,#0d141b);border:1px solid #344353;display:grid;place-items:center;overflow:hidden;flex:none}.demoMini svg{width:64px;height:64px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.btn{min-height:49px;border-radius:13px;border:1px solid var(--line);font-weight:850}.primary{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#111;border:0}.secondary{background:#1a232e;color:var(--text)}
-.hidden{display:none!important}
-.coach{text-align:center}.coachStage{height:300px;border-radius:20px;background:radial-gradient(circle at 50% 25%,#2c3d4a,#0b1118 72%);border:1px solid #394a59;display:grid;place-items:center;position:relative;overflow:hidden;margin:12px 0}.coachStage:before{content:"";position:absolute;bottom:28px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,#71808c,transparent)}.coachStage:after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;top:20px;background:radial-gradient(circle,rgba(245,208,106,.17),transparent 67%);pointer-events:none}
-.coachSvg{width:255px;height:255px;position:relative;z-index:2}.coachSvg .body{stroke:#f3cc5d;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;fill:none;filter:drop-shadow(0 3px 5px #0008)}.coachSvg .head{fill:#f3cc5d;filter:drop-shadow(0 2px 4px #0008)}.coachSvg .joint{fill:#fff0ad}.coachSvg .accent{stroke:#fff0ad;stroke-width:4;stroke-linecap:round;fill:none;opacity:.85}.coachSvg .ground{stroke:#71808d;stroke-width:3;stroke-linecap:round}.coachSvg .move{transform:none!important}50%{transform:translateX(9px) rotate(3deg)}}
-.count{font-size:66px;font-weight:950;line-height:1;margin:8px 0}.coachEx{font-size:23px;font-weight:900}.coachTarget{font-size:12px;color:var(--muted)}.set{font-size:11px;color:var(--gold2);font-weight:900}
-.gridstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#0e151c;border:1px solid var(--line);border-radius:13px;text-align:center;padding:12px}.stat b{display:block;font-size:20px}.stat span{font-size:9px;color:var(--muted)}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.tab{min-height:43px;border-radius:11px;border:1px solid var(--line);background:#151d27;color:var(--muted);font-weight:800}.tab.active{color:var(--gold2);border-color:#5a461c;background:#1b170d}
-@media(max-width:370px){.daygrid{grid-template-columns:repeat(5,1fr)}main{padding-left:11px;padding-right:11px}.coachStage{height:260px}}
-@media(prefers-reduced-motion:reduce){.coachSvg .move{animation:none!important}}
+:root{
+ --bg:#070b0d;--panel:#10171b;--panel2:#151e23;--line:#26343b;
+ --text:#f5f7f7;--muted:#93a1aa;--lime:#b8d43a;--lime2:#d6ed65;
+ --danger:#c63c30;--shadow:0 12px 35px rgba(0,0,0,.35)
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#273018 0,#0b1012 32%,#070b0d 72%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
+main{max-width:700px;margin:auto;padding:calc(12px + env(safe-area-inset-top)) 14px calc(38px + env(safe-area-inset-bottom))}
+button,select{font:inherit}
+.top{position:relative;padding:8px 8px 14px;text-align:center;overflow:hidden}
+.top:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,14,11,.18),rgba(7,11,13,.96));z-index:0}
+.top:after{content:"MILITARY  FITNESS  TRAINING";position:absolute;inset:0;display:grid;place-items:center;color:#b9c39d0f;font-weight:950;font-size:32px;letter-spacing:4px;transform:rotate(-5deg);z-index:0}
+.brand{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:10px}.logo{width:52px;height:52px;border-radius:15px;background:linear-gradient(145deg,#d8bd4b,#6f641d);display:grid;place-items:center;font-size:27px;box-shadow:var(--shadow)}
+h1{margin:0;font-size:25px;letter-spacing:.5px}.tag{font-size:10px;letter-spacing:1.2px;color:var(--muted);margin-top:4px}
+.settings{position:absolute;right:4px;top:10px;z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid #3a464b;background:#0b1012d9;color:#fff}
+.card{background:linear-gradient(180deg,#121a1f,#0e1519);border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow);padding:16px;margin:11px 0}
+.heroHead{display:flex;justify-content:space-between;align-items:center;gap:10px}.day{font-size:34px;font-weight:950;letter-spacing:.4px}.day small{font-size:18px;color:var(--lime)}.setInfo{color:var(--muted);font-size:14px;margin-top:4px}.levelPill{border:1px solid #71851d;background:#10180d;border-radius:17px;padding:10px 13px;text-align:center;color:var(--lime);font-weight:900;font-size:12px}.levelPill span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+.exerciseTitle{font-size:31px;font-weight:950;letter-spacing:.5px;margin:4px 0 2px}.underline{width:48px;height:4px;background:var(--lime);border-radius:99px;margin:7px 0 13px}.instructions{font-size:15px;line-height:1.55;color:#c2cbd0;max-width:95%}
+.timerRing{position:absolute;right:16px;top:20px;width:116px;height:116px;border-radius:50%;border:7px solid #a7c53b;display:grid;place-items:center;text-align:center;background:#0b1114e8}.timerRing b{font-size:45px;line-height:.9}.timerRing span{font-size:13px;color:var(--muted)}
+.heroImageWrap{position:relative;margin:13px -3px 0;border-radius:17px;overflow:hidden;border:1px solid #26343a;background:#0b1114;min-height:330px}.heroImage{width:100%;height:330px;display:block;object-fit:cover;object-position:center}.imageShade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.42))}
+.stepRow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:9px;background:#0b1013;border-top:1px solid #26343a}.step img{width:100%;height:78px;object-fit:cover;border-radius:10px;display:block;filter:saturate(.85)}.step label{display:block;text-align:center;font-size:10px;color:#aab5bb;margin-top:5px}.stepNo{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--lime);color:#10150b;font-weight:950;margin-right:4px}
+.relative{position:relative}
+.progressCard{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center}.progressTitle{font-size:11px;color:var(--muted);letter-spacing:1px}.dots{display:flex;gap:9px;margin-top:10px}.dot{width:23px;height:23px;border-radius:50%;border:3px solid #67747b}.dot.active{background:var(--lime);border-color:var(--lime)}.dot.done{background:#53641d;border-color:#70852a}.repsBig{font-size:30px;font-weight:950}.repsBig span{font-size:13px;color:var(--muted);font-weight:600}
+.controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}.control{min-height:52px;border-radius:13px;border:1px solid #2b3940;background:#182229;color:#f5f7f7;font-weight:850}.danger{background:linear-gradient(180deg,#d54a3d,#a92c24);border:0}.limeBtn{background:linear-gradient(180deg,#d8ef68,#abc734);color:#10150b;border:0}
+.next{display:grid;grid-template-columns:72px 1fr auto;gap:11px;align-items:center}.next img{width:72px;height:72px;object-fit:cover;border-radius:12px}.nextTitle{font-weight:900;font-size:17px}.nextMeta{font-size:12px;color:var(--muted);margin-top:4px}.restBox{border:1px solid #2b3940;border-radius:13px;padding:10px 12px;text-align:center;color:var(--muted);font-size:11px}.restBox b{display:block;color:#e2e8eb;font-size:16px;margin-top:3px}
+.nav{position:sticky;bottom:calc(8px + env(safe-area-inset-bottom));z-index:10;display:grid;grid-template-columns:repeat(5,1fr);background:#0b1114ee;border:1px solid #27343a;border-radius:17px;padding:5px;margin-top:14px;backdrop-filter:blur(14px)}.nav button{border:0;background:transparent;color:#87959d;min-height:58px;border-radius:13px;font-size:10px;font-weight:800}.nav button b{display:block;font-size:23px;margin-bottom:3px}.nav button.active{background:#17200d;color:var(--lime)}
+.levelCard{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.levelBtn{min-height:48px;border-radius:12px;border:1px solid var(--line);background:#151e23;color:#b7c1c6;font-weight:850}.levelBtn.active{border-color:#7f9722;color:var(--lime);background:#131b0d}
+.hidden{display:none!important}.tiny{font-size:10px;color:var(--muted);letter-spacing:1px}.muted{color:var(--muted);font-size:12px}.sessionRow{padding:9px 0;border-bottom:1px solid var(--line);font-size:12px;color:#b6c0c5}
+.footer{text-align:center;color:#647178;font-size:10px;letter-spacing:1px;padding:15px 0}
+@media(max-width:420px){.heroImage,.heroImageWrap{height:285px;min-height:285px}.step img{height:64px}.timerRing{width:94px;height:94px;right:10px;top:12px}.timerRing b{font-size:35px}.exerciseTitle{font-size:28px}.day{font-size:31px}}
 </style>
 </head>
 <body>
 <main>
-<header>
- <div class="brand"><div class="logo">🪖</div><div><h1>MILITARY FIT 30</h1><div class="sub">30 Hari • Tactical Bodyweight</div></div></div>
- <div class="streak"><b id="streak">🔥 0</b><span>hari lengkap</span></div>
+
+<header class="top">
+ <button class="settings" id="settings">⚙️</button>
+ <div class="brand"><div class="logo">🪖</div><div><h1>MILITARY FIT 30</h1><div class="tag">DISCIPLINE TODAY • A STRONGER TOMORROW</div></div></div>
 </header>
 
 <section class="card">
+ <div class="heroHead">
+  <div><div class="day">DAY <small id="dayNum">1</small></div><div class="setInfo" id="setInfo">Set 1/3 • Exercise 1/4</div></div>
+  <div class="levelPill"><span id="levelPill">ASAS</span><span id="levelEnglish">BEGINNER</span></div>
+ </div>
+</section>
+
+<section class="card relative">
+ <div class="exerciseTitle" id="exerciseTitle">PUSH-UP</div>
+ <div class="underline"></div>
+ <div class="instructions" id="instructions">Tangan dibuka selebar bahu. Turunkan badan secara terkawal, kemudian tolak semula ke atas.</div>
+ <div class="heroImageWrap">
+   <img id="heroImage" class="heroImage" alt="Gambar panduan senaman">
+   <div class="imageShade"></div>
+   <div class="timerRing"><div><b id="timer">30</b><span id="timerUnit">saat</span></div></div>
+   <div class="stepRow" id="stepRow"></div>
+ </div>
+</section>
+
+<section class="card progressCard">
+ <div><div class="progressTitle">PROGRESS SET</div><div class="dots" id="dots"></div></div>
+ <div style="text-align:right"><div class="progressTitle">JUMLAH REPS</div><div class="repsBig"><span id="repNow">0</span> <span>/ <span id="repTarget">8</span></span></div><span class="muted">set ini</span></div>
+</section>
+
+<div class="controls">
+ <button class="control" id="pause">Ⅱ &nbsp; Pause</button>
+ <button class="control danger" id="stop">■ &nbsp; Tamat</button>
+ <button class="control" id="skip">▶ &nbsp; Skip</button>
+</div>
+
+<section class="card">
+ <div class="tiny">SETERUSNYA</div>
+ <div class="next" style="margin-top:10px">
+  <img id="nextImage" alt="Exercise seterusnya">
+  <div><div class="nextTitle" id="nextTitle">SQUAT</div><div class="nextMeta" id="nextMeta">3 × 15 reps</div></div>
+  <div class="restBox">◷<b id="nextRest">20 saat</b><span>Rehat nanti</span></div>
+ </div>
+</section>
+
+<section class="card">
  <div class="tiny">TAHAP LATIHAN</div>
- <select id="level">
-  <option value="beginner">🟢 BEGINNER — Asas</option>
-  <option value="intermediate">🟡 INTERMEDIATE — Sederhana</option>
-  <option value="advanced">🔴 ADVANCED — Intensif</option>
- </select>
- <div id="levelText" class="notice" style="margin-top:8px"></div>
+ <div class="levelCard" style="margin-top:9px">
+  <button class="levelBtn" data-level="beginner">🟢 BEGINNER</button>
+  <button class="levelBtn" data-level="intermediate">🟡 INTERMEDIATE</button>
+  <button class="levelBtn" data-level="advanced">🔴 ADVANCED</button>
+ </div>
+ <div class="muted" id="levelDescription" style="margin-top:9px"></div>
 </section>
 
-<section class="card">
- <div class="row"><div><div class="tiny">OVERALL PROGRESS</div><strong id="pct" style="font-size:30px">0%</strong></div><div style="text-align:right"><div class="tiny">LATIHAN SELESAI</div><strong id="done">0</strong></div></div>
- <div class="progress"><div id="bar" class="bar"></div></div>
-</section>
-
-<section class="card">
- <div class="tiny">PILIH HARI</div>
+<section id="workoutTab" class="card">
+ <div class="tiny">PROGRAM 30 HARI</div>
  <select id="daySelect" style="margin-top:8px"></select>
- <div id="dayGrid" class="daygrid"></div>
+ <div id="dayGrid" class="levelCard" style="grid-template-columns:repeat(6,1fr);margin-top:9px"></div>
+ <div class="controls" style="margin-top:11px">
+  <button class="control limeBtn" id="start">▶ START</button>
+  <button class="control" id="warmup">🔥 Warm-up</button>
+  <button class="control" id="cooldown">🧘 Cooldown</button>
+ </div>
+ <div class="controls" style="margin-top:9px">
+  <button class="control" id="voice">🔊 Audio ON</button>
+  <button class="control" id="testVoice">🔊 Test Audio</button>
+  <button class="control" id="reset">↻ Reset</button>
+ </div>
 </section>
 
-<section class="card">
- <div class="row"><div><div class="tiny">PROGRAM HARI INI</div><h2 id="title" class="daytitle"></h2></div><span id="phase" class="phase"></span></div>
- <p id="note" class="notice"></p>
- <div id="list"></div>
+<section id="progressTab" class="card hidden">
+ <div class="tiny">PROGRESS</div>
+ <div style="font-size:34px;font-weight:950;margin-top:5px" id="progressPct">0%</div>
+ <div class="muted" id="progressText">0 latihan selesai</div>
+ <div style="height:10px"></div><div class="progress"><div class="bar" id="progressBar" style="width:0%"></div></div>
 </section>
 
-<div class="actions">
- <button id="start" class="btn primary">▶️ START WORKOUT</button>
- <button id="reset" class="btn secondary">↻ Reset Hari</button>
-</div>
-<div class="actions" style="margin-top:9px">
- <button id="warmup" class="btn secondary">🔥 Warm-up 5 min</button>
- <button id="cooldown" class="btn secondary">🧘 Cooldown 5 min</button>
-</div>
-<div class="actions" style="margin-top:9px">
- <button id="voice" class="btn secondary">🔊 Suara: ON</button>
- <button id="testVoice" class="btn secondary">🔊 Test Audio</button>
-</div>
-
-<section id="coachCard" class="card coach hidden">
- <div class="row"><div><div class="tiny">MINI PERSONAL TRAINER</div><h2 id="coachTitle" class="daytitle">READY</h2></div><span id="setBadge" class="phase">READY</span></div>
- <div class="coachStage"><div id="coachAnim"></div><div style="position:absolute;right:12px;top:10px;z-index:5;font-size:9px;font-weight:900;letter-spacing:.8px;color:#d7e0e8;border:1px solid #50606e;background:#101820cc;padding:6px 8px;border-radius:99px">GAMBAR SENAMAN</div></div>
- <div id="coachEx" class="coachEx">Get Ready</div>
- <div id="coachTarget" class="coachTarget">Tekan START WORKOUT untuk mula</div>
- <div id="count" class="count">3</div>
- <div class="progress"><div id="coachBar" class="bar"></div></div>
- <div class="actions" style="margin-top:12px"><button id="pause" class="btn secondary">⏸️ Pause</button><button id="stop" class="btn secondary">⏹️ Tamat</button></div>
+<section id="tipsTab" class="card hidden">
+ <div class="tiny">TIPS</div>
+ <p class="muted">Utamakan teknik dan berhenti jika sakit. Pilih tahap yang sesuai kemampuan. Warm-up dan cooldown adalah pilihan berasingan.</p>
+ <p class="muted">Gambar panduan menggunakan foto latihan daripada Pexels. Internet diperlukan untuk memuatkan foto.</p>
 </section>
 
-<div class="tabs">
- <button class="tab active" data-tab="stats">📊 Statistik</button>
- <button class="tab" data-tab="sessions">🏆 Sesi</button>
- <button class="tab" data-tab="tips">💡 Panduan</button>
-</div>
+<nav class="nav">
+ <button class="active" data-tab="workout"><b>🏋️</b>Workout</button>
+ <button data-tab="warm"><b>🔥</b>Warm-up</button>
+ <button data-tab="cool"><b>🧘</b>Cooldown</button>
+ <button data-tab="progress"><b>▥</b>Progress</button>
+ <button data-tab="tips"><b>▤</b>Tips</button>
+</nav>
 
-<section id="statsTab" class="card">
- <div class="gridstats"><div class="stat"><b id="days">0</b><span>HARI</span></div><div class="stat"><b id="sessions">0</b><span>SESI</span></div><div class="stat"><b id="minutes">0</b><span>MINIT</span></div></div>
-</section>
-<section id="sessionsTab" class="card hidden"><div class="tiny">REKOD SESI</div><div id="sessionList" class="notice" style="margin-top:8px">Belum ada sesi.</div></section>
-<section id="tipsTab" class="card hidden"><div class="notice"><b style="color:var(--text)">START WORKOUT</b><br>Butang ini terus masuk ke workout. <b>Warm-up 5 min</b> ialah butang berasingan dan tidak akan bermula secara automatik.</div><div class="notice" style="margin-top:8px"><b style="color:var(--text)">Audio</b><br>Tekan Test Audio sekali jika mahu mengaktifkan suara iPhone. Arahan suara dan countdown akan dimainkan semasa workout.</div><div class="notice" style="margin-top:8px"><b style="color:var(--text)">Animasi</b><br>Setiap exercise mempunyai gambar panduan terbina dalam. Gambar kekal statik supaya mudah dilihat ketika latihan.</div></section>
+<div class="footer">KEEP GOING • STAY DISCIPLINED</div>
 </main>
 
 <script>
-const LEVELS={
- beginner:{label:"BEGINNER",mult:.75,rest:25},
- intermediate:{label:"INTERMEDIATE",mult:1,rest:20},
- advanced:{label:"ADVANCED",mult:1.1,rest:20}
+const IMAGES={
+ push:"https://images.pexels.com/photos/3216680/pexels-photo-3216680.jpeg?cs=srgb&dl=pexels-reyna-3216680.jpg&fm=jpg",
+ squat:"https://images.pexels.com/photos/4164456/pexels-photo-4164456.jpeg?cs=srgb&dl=pexels-ivan-s-4164456.jpg&fm=jpg",
+ plank:"https://images.pexels.com/photos/6303732/pexels-photo-6303732.jpeg?cs=srgb&dl=pexels-klaus-nielsen-6303732.jpg&fm=jpg",
+ jump:"https://images.pexels.com/photos/7298411/pexels-photo-7298411.jpeg?cs=srgb&dl=pexels-kindelmedia-7298411.jpg&fm=jpg",
+ lunge:"https://images.pexels.com/photos/14022813/pexels-photo-14022813.jpeg?cs=srgb&dl=pexels-janno-nel-339541697-14022813.jpg&fm=jpg",
+ mountain:"https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?cs=srgb&dl=pexels-823sl-2294361.jpg&fm=jpg"
 };
-const BASE=[
- ["push","Push-up",8],["squat","Squat",15],["plank","Plank",20],["jump","Jumping Jack",30]
+const INFO={
+ push:["PUSH-UP","Tangan dibuka selebar bahu. Turunkan badan secara terkawal, kemudian tolak semula ke atas."],
+ squat:["SQUAT","Kaki kira-kira selebar bahu. Tolak pinggul ke belakang dan turun secara terkawal, kemudian berdiri semula."],
+ plank:["PLANK","Pastikan badan dalam garis lurus. Siku atau tangan stabil dan kekalkan pernafasan terkawal."],
+ jump:["JUMPING JACK","Buka kaki sambil angkat tangan, kemudian kembali ke posisi asal dengan pendaratan lembut."],
+ lunge:["LUNGES","Langkah ke hadapan, turunkan badan secara terkawal dan kembali ke posisi asal."],
+ mountain:["MOUNTAIN CLIMBER","Mulakan dalam posisi plank dan gerakkan lutut ke arah dada secara terkawal."]
+};
+const LEVELS={
+ beginner:{name:"ASAS",en:"BEGINNER",mult:.75,rest:25},
+ intermediate:{name:"SEDERHANA",en:"INTERMEDIATE",mult:1,rest:20},
+ advanced:{name:"CABARAN",en:"ADVANCED",mult:1.1,rest:20}
+};
+const base=[
+ ["push",8],["squat",15],["plank",20],["jump",30]
 ];
 const plans={};
 for(let d=1;d<=30;d++){
- let ex=BASE.map(x=>[...x]),phase="ASAS",note="Fokus teknik yang terkawal dan rehat secukupnya.";
- if([4,7,11,14,18,21,25,28,30].includes(d)){ex=[["walk","Jalan / fast walk",20],["walk","Stretching ringan",5]];phase="RECOVERY";note="Hari pemulihan. Kekalkan pergerakan ringan."}
- else if(d>=22){ex=[["push","Push-up",10],["squat","Squat",20],["lunge","Lunges",10],["burpee","Burpee",5],["mountain","Mountain Climber",20],["plank","Plank",30]];phase="PROGRESS";note="Fasa progres. Kekalkan teknik dan jangan paksa jika sakit."}
- else if(d>=15){ex=[["push","Push-up",8],["squat","Squat",15],["lunge","Lunges",10],["mountain","Mountain Climber",20],["plank","Plank",25]];phase="STRENGTH";note="Fasa kekuatan dan koordinasi."}
- else if(d>=8){ex=[["push","Push-up",8],["squat","Squat",15],["lunge","Lunges",8],["mountain","Mountain Climber",15],["plank","Plank",20]];phase="PROGRESS";note="Peningkatan secara beransur-ansur."}
- plans[d]={ex,phase,note};
+ let ex=base.map(x=>[...x]);
+ if([4,7,11,14,18,21,25,28,30].includes(d)) ex=[["walk",20],["walk",5]];
+ else if(d>=22) ex=[["push",10],["squat",20],["lunge",10],["mountain",20],["plank",30]];
+ else if(d>=15) ex=[["push",8],["squat",15],["lunge",10],["mountain",15],["plank",25]];
+ else if(d>=8) ex=[["push",8],["squat",15],["lunge",8],["mountain",15],["plank",20]];
+ plans[d]=ex;
 }
-let level=localStorage.getItem("mfLevel2")||"beginner";
-let current=Number(localStorage.getItem("mfDay2")||1);
-let checks=JSON.parse(localStorage.getItem("mfChecks2")||"{}");
-let sessions=JSON.parse(localStorage.getItem("mfSessions2")||"[]");
-let timer=null,paused=false,mode="none",exIndex=0,setNo=1,remaining=0,startAt=0,voiceOn=true;
+let level=localStorage.getItem("m30_level")||"beginner";
+let day=Number(localStorage.getItem("m30_day")||1);
+let done=JSON.parse(localStorage.getItem("m30_done")||"{}");
+let sessions=JSON.parse(localStorage.getItem("m30_sessions")||"[]");
+let exIndex=0,setNo=1,rep=0,remaining=30,timerId=null,paused=false,voiceOn=true;
 const $=id=>document.getElementById(id);
 for(let d=1;d<=30;d++){let o=document.createElement("option");o.value=d;o.textContent="Day "+d;$("daySelect").appendChild(o)}
-function save(){localStorage.setItem("mfLevel2",level);localStorage.setItem("mfDay2",current);localStorage.setItem("mfChecks2",JSON.stringify(checks));localStorage.setItem("mfSessions2",JSON.stringify(sessions))}
-function target(v){return Math.max(1,Math.round(v*LEVELS[level].mult))}
-function complete(d){return plans[d].ex.every((_,i)=>checks[d+"-"+i])}
-function update(){
- let total=0,done=0,days=0;for(let d=1;d<=30;d++){plans[d].ex.forEach((_,i)=>{total++;if(checks[d+"-"+i])done++});if(complete(d))days++}
- let pc=Math.round(done/total*100);$("pct").textContent=pc+"%";$("bar").style.width=pc+"%";$("done").textContent=done;$("days").textContent=days;$("streak").innerHTML="🔥 "+days;$("sessions").textContent=sessions.length;$("minutes").textContent=sessions.reduce((a,s)=>a+(s.minutes||0),0);
- $("sessionList").innerHTML=sessions.length?sessions.slice(-8).reverse().map(s=>new Date(s.date).toLocaleString("ms-MY")+" • "+s.level.toUpperCase()+" • "+s.minutes+" min").join("<br>"):"Belum ada sesi.";
-}
-function svg(kind,mini=false){
- const G='<line class="ground" x1="22" y1="194" x2="188" y2="194"/>';
- const H='<circle class="head" cx="105" cy="43" r="14"/>';
- const C='<path class="accent" d="M96 38 Q105 31 114 38"/>';
- if(kind==="push") return `<svg class="coachSvg" viewBox="0 0 210 210">${G}<circle class="head" cx="55" cy="105" r="13"/><path class="body" d="M68 112 L112 128 L160 151"/><path class="body" d="M93 120 L79 151 L55 166"/><path class="body" d="M120 130 L108 161 L141 177"/><path class="accent" d="M47 101 Q55 96 63 101"/></svg>`;
- if(kind==="squat") return `<svg class="coachSvg" viewBox="0 0 210 210">${G}${H}${C}<path class="body" d="M105 60 L105 113"/><path class="body" d="M105 76 L67 103"/><path class="body" d="M105 76 L143 103"/><path class="body" d="M105 113 L72 145 L49 174"/><path class="body" d="M105 113 L139 145 L166 174"/></svg>`;
- if(kind==="lunge") return `<svg class="coachSvg" viewBox="0 0 210 210">${G}${H}${C}<path class="body" d="M105 60 L105 116"/><path class="body" d="M105 76 L69 101"/><path class="body" d="M105 76 L142 101"/><path class="body" d="M105 116 L73 150 L48 177"/><path class="body" d="M105 116 L133 145 L169 145"/></svg>`;
- if(kind==="plank") return `<svg class="coachSvg" viewBox="0 0 210 210">${G}<circle class="head" cx="160" cy="96" r="13"/><path class="body" d="M147 105 L103 128 L57 151"/><path class="body" d="M103 128 L76 116 L61 128"/><path class="body" d="M103 128 L130 145 L145 180"/><path class="body" d="M57 151 L44 183"/><path class="accent" d="M150 91 Q160 86 169 92"/></svg>`;
- if(kind==="jump") return `<svg class="coachSvg" viewBox="0 0 210 210">${G}${H}${C}<path class="body" d="M105 60 L105 118"/><path class="body" d="M105 76 L54 52"/><path class="body" d="M105 76 L156 52"/><path class="body" d="M105 118 L60 170"/><path class="body" d="M105 118 L150 170"/></svg>`;
- if(kind==="burpee") return `<svg class="coachSvg" viewBox="0 0 210 210">${G}${H}${C}<path class="body" d="M105 60 L105 112"/><path class="body" d="M105 76 L66 103"/><path class="body" d="M105 76 L144 103"/><path class="body" d="M105 112 L75 148 L48 177"/><path class="body" d="M105 112 L136 148 L166 177"/></svg>`;
- if(kind==="mountain") return `<svg class="coachSvg" viewBox="0 0 210 210">${G}<circle class="head" cx="158" cy="72" r="13"/><path class="body" d="M145 82 L101 115 L57 143"/><path class="body" d="M111 109 L72 99"/><path class="body" d="M111 109 L146 126"/><path class="body" d="M101 115 L77 168"/><path class="body" d="M101 115 L139 166"/></svg>`;
- return `<svg class="coachSvg" viewBox="0 0 210 210">${G}${H}${C}<path class="body" d="M105 60 L105 118"/><path class="body" d="M105 76 L72 101"/><path class="body" d="M105 76 L140 95"/><path class="body" d="M105 118 L75 160"/><path class="body" d="M105 118 L137 154"/></svg>`;
-}
+function save(){localStorage.setItem("m30_level",level);localStorage.setItem("m30_day",day);localStorage.setItem("m30_done",JSON.stringify(done));localStorage.setItem("m30_sessions",JSON.stringify(sessions))}
+function reps(n){return Math.max(1,Math.round(n*LEVELS[level].mult))}
+function imgFor(kind){return IMAGES[kind]||IMAGES.push}
 function render(){
- $("level").value=level;$("daySelect").value=current;$("title").textContent="Day "+current;$("phase").textContent=plans[current].phase;$("note").textContent=plans[current].note;
- $("levelText").textContent=level==="beginner"?"Kurangkan ulangan dan fokus teknik.":level==="intermediate"?"Sasaran standard program.":"Tahap cabaran lebih tinggi; kekalkan teknik dan rehat jika perlu.";
- $("list").innerHTML="";
- plans[current].ex.forEach((e,i)=>{
-  let row=document.createElement("label");row.className="exercise";let cb=document.createElement("input");cb.type="checkbox";cb.checked=!!checks[current+"-"+i];
-  let d=document.createElement("div");d.className="demoMini";d.innerHTML=svg(e[0],true);let box=document.createElement("div");box.className="exercise-main";box.innerHTML='<div class="name">'+e[1]+'</div><div class="reps">'+target(e[2])+' reps • 3 set</div>';if(cb.checked)row.classList.add("done");
-  cb.onchange=()=>{checks[current+"-"+i]=cb.checked;row.classList.toggle("done",cb.checked);save();update();};row.append(cb,d,box);$("list").appendChild(row);
- });
- $("dayGrid").innerHTML="";for(let d=1;d<=30;d++){let b=document.createElement("button");b.className="daybtn";b.textContent=d;if(d===current)b.classList.add("current");if(complete(d))b.classList.add("complete");b.onclick=()=>{current=d;save();render()};$("dayGrid").appendChild(b)}
- update();
+ $("dayNum").textContent=day;$("daySelect").value=day;
+ let ex=plans[day][exIndex]||plans[day][0],kind=ex[0],target=reps(ex[1]);
+ $("setInfo").textContent=`Set ${setNo}/3 • Exercise ${Math.min(exIndex+1,plans[day].length)}/${plans[day].length}`;
+ $("levelPill").textContent=LEVELS[level].name;$("levelEnglish").textContent=LEVELS[level].en;
+ $("levelDescription").textContent=level==="beginner"?"Tahap asas: lebih ringan dan fokus teknik.":level==="intermediate"?"Tahap sederhana: sasaran standard program.":"Tahap cabaran: sedikit lebih tinggi, tetapi teknik dan rehat tetap diutamakan.";
+ if(INFO[kind]){$("exerciseTitle").textContent=INFO[kind][0];$("instructions").textContent=INFO[kind][1]}else{$("exerciseTitle").textContent="PEMULIHAN";$("instructions").textContent="Pergerakan ringan dan regangan secara selesa."}
+ $("heroImage").src=imgFor(kind);$("nextImage").src=imgFor((plans[day][exIndex+1]||plans[day][0])[0]);
+ $("timer").textContent=kind==="plank"?"20":target;$("timerUnit").textContent=kind==="plank"?"saat":"reps";
+ $("repNow").textContent=rep;$("repTarget").textContent=target;
+ $("dots").innerHTML=[1,2,3].map(i=>`<span class="dot ${i<setNo?"done":i===setNo?"active":""}"></span>`).join("");
+ let next=plans[day][exIndex+1]||plans[day][0];let nk=next[0];
+ $("nextTitle").textContent=INFO[nk]?.[0]||"PEMULIHAN";$("nextMeta").textContent=`3 × ${reps(next[1])} reps`;$("nextRest").textContent=LEVELS[level].rest+" saat";
+ document.querySelectorAll(".levelBtn").forEach(b=>b.classList.toggle("active",b.dataset.level===level));
+ renderDays();updateProgress();
 }
-function speak(text){if(!voiceOn||!window.speechSynthesis)return;try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.lang="ms-MY";u.rate=.9;speechSynthesis.speak(u)}catch(e){}}
-function beep(freq=750,d=.1){try{let C=window.AudioContext||window.webkitAudioContext;if(!C)return;let c=new C(),o=c.createOscillator(),g=c.createGain();o.frequency.value=freq;g.gain.value=.07;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+d)}catch(e){}}
-function countdown(cb){let n=3;$("coachTitle").textContent="GET READY";$("coachEx").textContent="Bersedia";$("coachTarget").textContent="Latihan akan bermula";$("count").textContent=n;speak("Bersedia");clearInterval(timer);timer=setInterval(()=>{if(paused)return;n--;$("count").textContent=n;if(n>0){speak(String(n));beep(n===1?950:700,.08)}else{clearInterval(timer);cb()}},1000)}
-function showCoach(kind,title,targetText,badge,count){$("coachCard").classList.remove("hidden");$("coachTitle").textContent=title;$("coachEx").textContent=title;$("coachTarget").textContent=targetText;$("setBadge").textContent=badge;$("count").textContent=count;$("coachAnim").innerHTML=svg(kind);$("coachBar").style.width="0%"}
-function startWorkout(){
- clearInterval(timer);paused=false;mode="workout";exIndex=0;setNo=1;startAt=Date.now();$("coachCard").classList.remove("hidden");
- let first=plans[current].ex[0];showCoach(first[0],first[1],target(first[2])+" reps • 3 set","READY",3);
- $("coachTarget").textContent="Gambar panduan → countdown → mula";
- countdown(()=>runExercise());
+function renderDays(){
+ $("dayGrid").innerHTML="";
+ for(let d=1;d<=30;d++){let b=document.createElement("button");b.className="levelBtn";b.textContent=d;if(d===day)b.classList.add("active");b.onclick=()=>{day=d;exIndex=0;setNo=1;rep=0;save();render()};$("dayGrid").appendChild(b)}
 }
-function runExercise(){
- let ex=plans[current].ex[exIndex];if(!ex){finishWorkout();return}
- let total=target(ex[2]);remaining=total;showCoach(ex[0],ex[1],total+" reps • 3 set", "SET "+setNo+"/3",remaining);speak(ex[1]+". Set "+setNo);clearInterval(timer);
- timer=setInterval(()=>{if(paused)return;remaining--;$("count").textContent=remaining;$("coachBar").style.width=((total-remaining)/total*100)+"%";if(remaining<=3&&remaining>0){speak(String(remaining));beep(remaining===1?950:700,.08)}if(remaining<=0){clearInterval(timer);beep(1000,.12);if(setNo<3){setNo++;runRest()}else{exIndex++;setNo=1;if(exIndex<plans[current].ex.length)runRest();else finishWorkout()}}},1000);
+function updateProgress(){
+ let total=0,finished=0;for(let d=1;d<=30;d++){plans[d].forEach((_,i)=>{total++;if(done[d+"-"+i])finished++})}
+ let p=Math.round(finished/total*100);$("progressPct").textContent=p+"%";$("progressText").textContent=finished+" latihan selesai";$("progressBar").style.width=p+"%";
 }
-function runRest(){let n=LEVELS[level].rest;showCoach("walk","REHAT","Bersedia untuk set seterusnya","REST",n);speak("Rehat");clearInterval(timer);timer=setInterval(()=>{if(paused)return;n--;$("count").textContent=n;$("coachBar").style.width=((LEVELS[level].rest-n)/LEVELS[level].rest*100)+"%";if(n<=3&&n>0){speak(String(n));beep(n===1?950:700,.08)}if(n<=0){clearInterval(timer);runExercise()}},1000)}
-function finishWorkout(){clearInterval(timer);let mins=Math.max(1,Math.round((Date.now()-startAt)/60000));sessions.push({date:new Date().toISOString(),minutes:mins,level});save();update();showCoach("walk","WORKOUT SELESAI","Semua set selesai","DONE","✓");speak("Tahniah. Workout selesai.");beep(900,.12);setTimeout(()=>beep(1100,.18),160)}
-function runFiveMinute(label,kind){
- clearInterval(timer);paused=false;mode=label;let total=300,n=total;showCoach(kind,label==="WARM-UP"?"🔥 WARM-UP":"🧘 COOLDOWN",label==="WARM-UP"?"Pemanasan ringan sebelum latihan":"Perlahankan pergerakan dan regangkan badan",label,"5:00");speak(label==="WARM-UP"?"Warm up lima minit.":"Cooldown lima minit.");timer=setInterval(()=>{if(paused)return;n--;$("count").textContent=Math.floor(n/60)+":"+String(n%60).padStart(2,"0");$("coachBar").style.width=((total-n)/total*100)+"%";if(n<=3&&n>0){speak(String(n));beep(n===1?950:700,.08)}if(n<=0){clearInterval(timer);$("coachEx").textContent=label==="WARM-UP"?"WARM-UP SELESAI":"COOLDOWN SELESAI";$("coachTarget").textContent="Selesai.";speak(label==="WARM-UP"?"Warm up selesai.":"Cooldown selesai.")}},1000)}
-$("level").onchange=()=>{level=$("level").value;save();render()};$("daySelect").onchange=()=>{current=Number($("daySelect").value);save();render()};$("reset").onclick=()=>{plans[current].ex.forEach((_,i)=>delete checks[current+"-"+i]);save();render()};
-$("start").onclick=startWorkout;$("warmup").onclick=()=>runFiveMinute("WARM-UP","walk");$("cooldown").onclick=()=>runFiveMinute("COOLDOWN","walk");
-$("pause").onclick=()=>{paused=!paused;$("pause").textContent=paused?"▶️ Sambung":"⏸️ Pause";if(!paused)speak("Sambung.")};
-$("stop").onclick=()=>{clearInterval(timer);$("coachCard").classList.add("hidden");speechSynthesis?.cancel();};
-$("voice").onclick=()=>{voiceOn=!voiceOn;$("voice").textContent=voiceOn?"🔊 Suara: ON":"🔇 Suara: OFF";if(!voiceOn)speechSynthesis?.cancel()};
-$("testVoice").onclick=()=>{voiceOn=true;$("voice").textContent="🔊 Suara: ON";speak("Audio Military Fit tiga puluh aktif. Bersedia.");beep(900,.14)};
-document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");["stats","sessions","tips"].forEach(t=>$(t+"Tab").classList.toggle("hidden",t!==b.dataset.tab))});
+function speak(t){if(!voiceOn||!speechSynthesis)return;try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang="ms-MY";u.rate=.9;speechSynthesis.speak(u)}catch(e){}}
+function beep(f=800,d=.1){try{let C=AudioContext||webkitAudioContext,c=new C(),o=c.createOscillator(),g=c.createGain();o.frequency.value=f;g.gain.value=.06;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+d)}catch(e){}}
+function start(){
+ clearInterval(timerId);paused=false;exIndex=0;setNo=1;rep=0;render();speak("Bersedia untuk workout.");countdown(()=>runSet());
+}
+function countdown(cb){let n=3;$("timer").textContent=n;$("timerUnit").textContent="mula";clearInterval(timerId);timerId=setInterval(()=>{if(paused)return;n--;$("timer").textContent=n;if(n>0){speak(String(n));beep(n===1?1000:700,.08)}else{clearInterval(timerId);cb()}},1000)}
+function runSet(){
+ let ex=plans[day][exIndex];if(!ex){finish();return}let target=reps(ex[1]);remaining=target;rep=0;render();speak((INFO[ex[0]]?.[0]||"Pemulihan")+". Set "+setNo);clearInterval(timerId);
+ timerId=setInterval(()=>{if(paused)return;remaining--;rep=target-remaining;$("timer").textContent=remaining;$("repNow").textContent=rep;if(remaining<=3&&remaining>0){speak(String(remaining));beep(remaining===1?1000:700,.08)}if(remaining<=0){clearInterval(timerId);if(setNo<3){setNo++;rest(()=>runSet())}else{done[day+"-"+exIndex]=true;exIndex++;setNo=1;save();if(exIndex<plans[day].length)rest(()=>runSet());else finish()}}},1000)
+}
+function rest(cb){let n=LEVELS[level].rest;render();$("exerciseTitle").textContent="REHAT";$("instructions").textContent="Ambil masa untuk berehat dan bersedia untuk set seterusnya.";speak("Rehat.");clearInterval(timerId);timerId=setInterval(()=>{if(paused)return;n--;$("timer").textContent=n;$("timerUnit").textContent="saat";if(n<=3&&n>0){speak(String(n));beep(n===1?1000:700,.08)}if(n<=0){clearInterval(timerId);cb()}},1000)}
+function finish(){clearInterval(timerId);sessions.push({date:new Date().toISOString(),day,level});save();updateProgress();$("exerciseTitle").textContent="WORKOUT SELESAI";$("instructions").textContent="Semua set selesai. Rehat dan pulihkan badan.";speak("Workout selesai.");beep(950,.12);setTimeout(()=>beep(1200,.18),160)}
+function timed(title,seconds){clearInterval(timerId);paused=false;let n=seconds;$("exerciseTitle").textContent=title;$("instructions").textContent=title==="WARM-UP"?"Pemanasan ringan dan pergerakan mobiliti.":"Perlahankan pergerakan dan lakukan regangan ringan.";speak(title==="WARM-UP"?"Warm up lima minit.":"Cooldown lima minit.");$("timer").textContent="5:00";$("timerUnit").textContent="min";timerId=setInterval(()=>{if(paused)return;n--; $("timer").textContent=Math.floor(n/60)+":"+String(n%60).padStart(2,"0");if(n<=3&&n>0){speak(String(n));beep(n===1?1000:700,.08)}if(n<=0){clearInterval(timerId);speak(title+" selesai.")}},1000)}
+$("start").onclick=start;$("warmup").onclick=()=>timed("WARM-UP",300);$("cooldown").onclick=()=>timed("COOLDOWN",300);
+$("pause").onclick=()=>{paused=!paused;$("pause").textContent=paused?"▶ Sambung":"Ⅱ Pause";if(!paused)speak("Sambung.")};
+$("stop").onclick=()=>{clearInterval(timerId);$("timer").textContent="30";$("timerUnit").textContent="saat";speak("Workout dihentikan.")};
+$("skip").onclick=()=>{clearInterval(timerId);exIndex=Math.min(exIndex+1,plans[day].length-1);setNo=1;rep=0;render();speak("Exercise seterusnya.")};
+$("reset").onclick=()=>{plans[day].forEach((_,i)=>delete done[day+"-"+i]);save();render()};
+$("voice").onclick=()=>{voiceOn=!voiceOn;$("voice").textContent=voiceOn?"🔊 Audio ON":"🔇 Audio OFF";if(!voiceOn)speechSynthesis?.cancel()};
+$("testVoice").onclick=()=>{voiceOn=true;$("voice").textContent="🔊 Audio ON";speak("Audio Military Fit tiga puluh aktif.");beep(900,.14)};
+$("daySelect").onchange=()=>{day=Number($("daySelect").value);exIndex=0;setNo=1;rep=0;save();render()};
+document.querySelectorAll(".levelBtn[data-level]").forEach(b=>b.onclick=()=>{level=b.dataset.level;exIndex=0;setNo=1;rep=0;save();render()});
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");
+ const t=b.dataset.tab;
+ if(t==="warm"){timed("WARM-UP",300);showOnly("workout")}
+ else if(t==="cool"){timed("COOLDOWN",300);showOnly("workout")}
+ else if(t==="progress"){showOnly("progress")}
+ else if(t==="tips"){showOnly("tips")}
+ else showOnly("workout")
+});
+function showOnly(which){
+ $("workoutTab").classList.toggle("hidden",which!=="workout");
+ $("progressTab").classList.toggle("hidden",which!=="progress");
+ $("tipsTab").classList.toggle("hidden",which!=="tips");
+}
+$("settings").onclick=()=>alert("Pilih tahap di bahagian TAHAP LATIHAN. Audio boleh diuji dengan butang Test Audio.");
 render();
 </script>
 </body>
