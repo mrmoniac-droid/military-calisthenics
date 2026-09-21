@@ -22,9 +22,9 @@ select,button{font:inherit}select{width:100%;padding:13px;border-radius:13px;bor
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.btn{min-height:49px;border-radius:13px;border:1px solid var(--line);font-weight:850}.primary{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#111;border:0}.secondary{background:#1a232e;color:var(--text)}
 .hidden{display:none!important}
 .coach{text-align:center}.coachStage{height:300px;border-radius:20px;background:radial-gradient(circle at 50% 25%,#2c3d4a,#0b1118 72%);border:1px solid #394a59;display:grid;place-items:center;position:relative;overflow:hidden;margin:12px 0}.coachStage:before{content:"";position:absolute;bottom:28px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,#71808c,transparent)}.coachStage:after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;top:20px;background:radial-gradient(circle,rgba(245,208,106,.17),transparent 67%);pointer-events:none}
-.coachSvg{width:255px;height:255px;position:relative;z-index:2}.coachSvg .body{stroke:#f3cc5d;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;fill:none;filter:drop-shadow(0 3px 5px #0008)}.coachSvg .head{fill:#f3cc5d;filter:drop-shadow(0 2px 4px #0008)}.coachSvg .accent{stroke:#fff0ad;stroke-width:4;stroke-linecap:round;fill:none;opacity:.85}.coachSvg .ground{stroke:#71808d;stroke-width:3;stroke-linecap:round}.coachSvg .move{transform-box:fill-box;transform-origin:center}
-.coachSvg.push .move{animation:aPush .9s ease-in-out infinite}.coachSvg.squat .move{animation:aSquat 1s ease-in-out infinite}.coachSvg.lunge .move{animation:aLunge 1s ease-in-out infinite}.coachSvg.plank .move{animation:aPlank 1s ease-in-out infinite}.coachSvg.jump .move{animation:aJump .65s ease-in-out infinite}.coachSvg.burpee .move{animation:aBurpee 1.1s ease-in-out infinite}.coachSvg.mountain .move{animation:aMountain .65s ease-in-out infinite}.coachSvg.walk .move{animation:aWalk .65s ease-in-out infinite}
-@keyframes aPush{50%{transform:translateY(19px)}}@keyframes aSquat{50%{transform:translateY(24px) scaleY(.82)}}@keyframes aLunge{50%{transform:translateX(-20px) rotate(-5deg)}}@keyframes aPlank{50%{transform:translateY(5px) rotate(-4deg)}}@keyframes aJump{50%{transform:translateY(-30px)}}@keyframes aBurpee{0%,100%{transform:translateY(0) scale(1)}45%{transform:translateY(27px) scale(.82)}70%{transform:translateY(-5px) scale(1.02)}}@keyframes aMountain{50%{transform:translateX(13px) rotate(-7deg)}}@keyframes aWalk{50%{transform:translateX(10px) rotate(4deg)}}
+.coachSvg{width:255px;height:255px;position:relative;z-index:2}.coachSvg .body{stroke:#f3cc5d;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;fill:none;filter:drop-shadow(0 3px 5px #0008)}.coachSvg .head{fill:#f3cc5d;filter:drop-shadow(0 2px 4px #0008)}.coachSvg .joint{fill:#fff0ad}.coachSvg .accent{stroke:#fff0ad;stroke-width:4;stroke-linecap:round;fill:none;opacity:.85}.coachSvg .ground{stroke:#71808d;stroke-width:3;stroke-linecap:round}.coachSvg .move{transform-box:fill-box;transform-origin:center}
+.coachSvg.push .move{animation:aPush 1.15s ease-in-out infinite}.coachSvg.push .arm{animation:aPushArm 1.15s ease-in-out infinite;transform-box:fill-box;transform-origin:100% 0}.coachSvg.squat .move{animation:aSquat 1.2s ease-in-out infinite}.coachSvg.squat .leg1{animation:aSquatLeg 1.2s ease-in-out infinite;transform-box:fill-box;transform-origin:0 0}.coachSvg.squat .leg2{animation:aSquatLeg2 1.2s ease-in-out infinite;transform-box:fill-box;transform-origin:0 0}.coachSvg.lunge .move{animation:aLunge 1.2s ease-in-out infinite}.coachSvg.plank .move{animation:aPlank 1.2s ease-in-out infinite}.coachSvg.jump .move{animation:aJump .75s ease-in-out infinite}.coachSvg.burpee .move{animation:aBurpee 1.3s ease-in-out infinite}.coachSvg.mountain .move{animation:aMountain .7s ease-in-out infinite}.coachSvg.walk .move{animation:aWalk .75s ease-in-out infinite}
+@keyframes aPush{0%,100%{transform:translateY(0)}50%{transform:translateY(18px)}}@keyframes aPushArm{50%{transform:rotate(-10deg)}}@keyframes aSquat{0%,100%{transform:translateY(0)}50%{transform:translateY(17px)}}@keyframes aSquatLeg{50%{transform:rotate(10deg)}}@keyframes aSquatLeg2{50%{transform:rotate(-10deg)}}@keyframes aLunge{0%,100%{transform:translateX(0)}50%{transform:translateX(-18px)}}@keyframes aPlank{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(5px) rotate(-3deg)}}@keyframes aJump{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-32px) scale(1.02)}}@keyframes aBurpee{0%,100%{transform:translateY(0) scale(1)}38%{transform:translateY(25px) scale(.82)}58%{transform:translateY(8px) scale(.9)}75%{transform:translateY(-6px) scale(1.03)}}@keyframes aMountain{0%,100%{transform:translateX(0) rotate(0)}50%{transform:translateX(15px) rotate(-8deg)}}@keyframes aWalk{0%,100%{transform:translateX(-8px) rotate(0)}50%{transform:translateX(9px) rotate(3deg)}}
 .count{font-size:66px;font-weight:950;line-height:1;margin:8px 0}.coachEx{font-size:23px;font-weight:900}.coachTarget{font-size:12px;color:var(--muted)}.set{font-size:11px;color:var(--gold2);font-weight:900}
 .gridstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#0e151c;border:1px solid var(--line);border-radius:13px;text-align:center;padding:12px}.stat b{display:block;font-size:20px}.stat span{font-size:9px;color:var(--muted)}
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.tab{min-height:43px;border-radius:11px;border:1px solid var(--line);background:#151d27;color:var(--muted);font-weight:800}.tab.active{color:var(--gold2);border-color:#5a461c;background:#1b170d}
@@ -81,7 +81,7 @@ select,button{font:inherit}select{width:100%;padding:13px;border-radius:13px;bor
 
 <section id="coachCard" class="card coach hidden">
  <div class="row"><div><div class="tiny">MINI PERSONAL TRAINER</div><h2 id="coachTitle" class="daytitle">READY</h2></div><span id="setBadge" class="phase">READY</span></div>
- <div class="coachStage"><div id="coachAnim"></div></div>
+ <div class="coachStage"><div id="coachAnim"></div><div style="position:absolute;right:12px;top:10px;z-index:5;font-size:9px;font-weight:900;letter-spacing:.8px;color:#d7e0e8;border:1px solid #50606e;background:#101820cc;padding:6px 8px;border-radius:99px">● LIVE DEMO</div></div>
  <div id="coachEx" class="coachEx">Get Ready</div>
  <div id="coachTarget" class="coachTarget">Tekan START WORKOUT untuk mula</div>
  <div id="count" class="count">3</div>
@@ -136,16 +136,45 @@ function update(){
  $("sessionList").innerHTML=sessions.length?sessions.slice(-8).reverse().map(s=>new Date(s.date).toLocaleString("ms-MY")+" • "+s.level.toUpperCase()+" • "+s.minutes+" min").join("<br>"):"Belum ada sesi.";
 }
 function svg(kind,mini=false){
- const g='<line class="ground" x1="28" y1="190" x2="182" y2="190"/>';
- const head='<circle class="head" cx="105" cy="42" r="15"/>';
- if(kind==="push")return `<svg class="coachSvg push" viewBox="0 0 210 210">${g}<g class="move"><circle class="head" cx="61" cy="101" r="13"/><path class="body" d="M73 109 L124 127 L168 150"/><path class="body" d="M95 117 L82 150"/><path class="body" d="M124 127 L112 161"/><path class="body" d="M82 150 L54 166"/><path class="body" d="M112 161 L146 177"/></g></svg>`;
- if(kind==="squat")return `<svg class="coachSvg squat" viewBox="0 0 210 210">${g}<g class="move">${head}<path class="body" d="M105 60 L105 112"/><path class="body" d="M105 75 L67 103"/><path class="body" d="M105 75 L143 103"/><path class="body" d="M105 112 L74 145 L50 173"/><path class="body" d="M105 112 L137 145 L166 173"/></g></svg>`;
- if(kind==="lunge")return `<svg class="coachSvg lunge" viewBox="0 0 210 210">${g}<g class="move">${head}<path class="body" d="M105 60 L105 116"/><path class="body" d="M105 76 L70 102"/><path class="body" d="M105 76 L140 102"/><path class="body" d="M105 116 L73 151 L49 177"/><path class="body" d="M105 116 L132 145 L168 145"/></g></svg>`;
- if(kind==="plank")return `<svg class="coachSvg plank" viewBox="0 0 210 210">${g}<g class="move"><circle class="head" cx="159" cy="96" r="13"/><path class="body" d="M146 105 L100 128 L56 151"/><path class="body" d="M105 126 L76 115"/><path class="body" d="M105 126 L130 145"/><path class="body" d="M56 151 L43 183"/><path class="body" d="M130 145 L145 181"/></g></svg>`;
- if(kind==="jump")return `<svg class="coachSvg jump" viewBox="0 0 210 210">${g}<g class="move">${head}<path class="body" d="M105 60 L105 118"/><path class="body" d="M105 76 L55 55"/><path class="body" d="M105 76 L155 55"/><path class="body" d="M105 118 L60 170"/><path class="body" d="M105 118 L150 170"/></g></svg>`;
- if(kind==="burpee")return `<svg class="coachSvg burpee" viewBox="0 0 210 210">${g}<g class="move">${head}<path class="body" d="M105 60 L105 112"/><path class="body" d="M105 76 L66 103"/><path class="body" d="M105 76 L144 103"/><path class="body" d="M105 112 L75 148 L48 177"/><path class="body" d="M105 112 L136 148 L166 177"/></g></svg>`;
- if(kind==="mountain")return `<svg class="coachSvg mountain" viewBox="0 0 210 210">${g}<g class="move"><circle class="head" cx="157" cy="72" r="13"/><path class="body" d="M145 82 L101 115 L57 143"/><path class="body" d="M110 110 L72 99"/><path class="body" d="M110 110 L146 126"/><path class="body" d="M101 115 L78 168"/><path class="body" d="M101 115 L137 166"/></g></svg>`;
- return `<svg class="coachSvg walk" viewBox="0 0 210 210">${g}<g class="move">${head}<path class="body" d="M105 60 L105 118"/><path class="body" d="M105 76 L72 101"/><path class="body" d="M105 76 L140 95"/><path class="body" d="M105 118 L75 160"/><path class="body" d="M105 118 L137 154"/></g></svg>`;
+ const G='<line class="ground" x1="22" y1="194" x2="188" y2="194"/>';
+ const H='<circle class="head" cx="105" cy="43" r="14"/>';
+ const K='<circle class="joint" cx="105" cy="112" r="4"/>';
+ const common=`<circle class="head" cx="105" cy="43" r="14"/><path class="accent" d="M96 38 Q105 31 114 38"/>`;
+
+ if(kind==="push") return `<svg class="coachSvg push" viewBox="0 0 210 210">${G}<g class="move">
+   <circle class="head" cx="55" cy="105" r="13"/><path class="body" d="M68 112 L112 128 L160 151"/>
+   <path class="body arm" d="M93 120 L79 151 L55 166"/><path class="body arm2" d="M120 130 L108 161 L141 177"/>
+   <path class="accent" d="M47 101 Q55 96 63 101"/></g></svg>`;
+
+ if(kind==="squat") return `<svg class="coachSvg squat" viewBox="0 0 210 210">${G}<g class="move">
+   ${common}<path class="body" d="M105 60 L105 113"/><path class="body arm" d="M105 76 L67 103"/><path class="body arm2" d="M105 76 L143 103"/>
+   <path class="body leg1" d="M105 113 L72 145 L49 174"/><path class="body leg2" d="M105 113 L139 145 L166 174"/></g></svg>`;
+
+ if(kind==="lunge") return `<svg class="coachSvg lunge" viewBox="0 0 210 210">${G}<g class="move">
+   ${common}<path class="body" d="M105 60 L105 116"/><path class="body arm" d="M105 76 L69 101"/><path class="body arm2" d="M105 76 L142 101"/>
+   <path class="body leg1" d="M105 116 L73 150 L48 177"/><path class="body leg2" d="M105 116 L133 145 L169 145"/></g></svg>`;
+
+ if(kind==="plank") return `<svg class="coachSvg plank" viewBox="0 0 210 210">${G}<g class="move">
+   <circle class="head" cx="160" cy="96" r="13"/><path class="body" d="M147 105 L103 128 L57 151"/>
+   <path class="body arm" d="M103 128 L76 116 L61 128"/><path class="body arm2" d="M103 128 L130 145 L145 180"/>
+   <path class="body" d="M57 151 L44 183"/><path class="accent" d="M150 91 Q160 86 169 92"/></g></svg>`;
+
+ if(kind==="jump") return `<svg class="coachSvg jump" viewBox="0 0 210 210">${G}<g class="move">
+   ${common}<path class="body" d="M105 60 L105 118"/><path class="body arm" d="M105 76 L54 52"/><path class="body arm2" d="M105 76 L156 52"/>
+   <path class="body leg1" d="M105 118 L60 170"/><path class="body leg2" d="M105 118 L150 170"/></g></svg>`;
+
+ if(kind==="burpee") return `<svg class="coachSvg burpee" viewBox="0 0 210 210">${G}<g class="move">
+   ${common}<path class="body" d="M105 60 L105 112"/><path class="body arm" d="M105 76 L66 103"/><path class="body arm2" d="M105 76 L144 103"/>
+   <path class="body leg1" d="M105 112 L75 148 L48 177"/><path class="body leg2" d="M105 112 L136 148 L166 177"/></g></svg>`;
+
+ if(kind==="mountain") return `<svg class="coachSvg mountain" viewBox="0 0 210 210">${G}<g class="move">
+   <circle class="head" cx="158" cy="72" r="13"/><path class="body" d="M145 82 L101 115 L57 143"/>
+   <path class="body arm" d="M111 109 L72 99"/><path class="body arm2" d="M111 109 L146 126"/>
+   <path class="body leg1" d="M101 115 L77 168"/><path class="body leg2" d="M101 115 L139 166"/></g></svg>`;
+
+ return `<svg class="coachSvg walk" viewBox="0 0 210 210">${G}<g class="move">
+   ${common}<path class="body" d="M105 60 L105 118"/><path class="body arm" d="M105 76 L72 101"/><path class="body arm2" d="M105 76 L140 95"/>
+   <path class="body leg1" d="M105 118 L75 160"/><path class="body leg2" d="M105 118 L137 154"/></g></svg>`;
 }
 function render(){
  $("level").value=level;$("daySelect").value=current;$("title").textContent="Day "+current;$("phase").textContent=plans[current].phase;$("note").textContent=plans[current].note;
@@ -165,6 +194,8 @@ function countdown(cb){let n=3;$("coachTitle").textContent="GET READY";$("coachE
 function showCoach(kind,title,targetText,badge,count){$("coachCard").classList.remove("hidden");$("coachTitle").textContent=title;$("coachEx").textContent=title;$("coachTarget").textContent=targetText;$("setBadge").textContent=badge;$("count").textContent=count;$("coachAnim").innerHTML=svg(kind);$("coachBar").style.width="0%"}
 function startWorkout(){
  clearInterval(timer);paused=false;mode="workout";exIndex=0;setNo=1;startAt=Date.now();$("coachCard").classList.remove("hidden");
+ let first=plans[current].ex[0];showCoach(first[0],first[1],target(first[2])+" reps • 3 set","READY",3);
+ $("coachTarget").textContent="Demonstrasi gerakan → countdown → mula";
  countdown(()=>runExercise());
 }
 function runExercise(){
